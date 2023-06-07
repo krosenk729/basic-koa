@@ -7,7 +7,7 @@ fun.use(async (ctx, next) => {
   
   // two ways of getting headers from request
   const host = ctx.request.get('host') || ctx.request.header.host;
-  if (host?.includes('127.0.0.1')) {
+  if (process.env.NODE_ENV !== 'test' && host?.includes('127.0.0.1')) {
     return Object.assign(ctx, {
       status: 200,
       body: {

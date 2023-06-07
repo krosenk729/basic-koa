@@ -1,5 +1,5 @@
-const { plugin } = require('./plugin');
+const { app } = require('./plugin');
 
 module.exports = {
-    routesPlugin: plugin,
+    app,
 };
